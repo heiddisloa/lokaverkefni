@@ -6,11 +6,11 @@
 <h2>Valinn flokkur</h2>
 
 <div class="col-md-12">
-    @foreach (var photo in Model.catePhotos)
+    @foreach (var photo in Model.CategoryPhotos)
 {
 
     <div class="categoryImg col-md-4">
-        <img src="@photo.photoUrl" />
+        <img src="@photo.PhotoUrl" />
         <p class="textCaption">@photo.Caption</p>
         @foreach (var h in photo.Hashtags)
         {

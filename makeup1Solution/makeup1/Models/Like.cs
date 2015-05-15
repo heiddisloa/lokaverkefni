@@ -8,6 +8,6 @@ namespace makeup1.Models
     public class Like
     {
         public int ID { get; set; }
-        public int photoId { get; set; }
+        public int PhotoId { get; set; }
     }
 }

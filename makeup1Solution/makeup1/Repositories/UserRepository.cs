@@ -34,11 +34,11 @@ namespace makeup1.Repositories
             return db.Users.FirstOrDefault(a => a.UserName == username);
         }
 
-        internal List<UserViewModel> Search(string query)
+        internal List<SearchViewModel> Search(string query)
         {
             List<ApplicationUser> user = db.Users.Where(a => a.UserName.Contains(query)).ToList();
-            List<UserViewModel> usersToReturn = new List<UserViewModel>();
-            user.ForEach(a => usersToReturn.Add(new UserViewModel(a)));
+            List<SearchViewModel> usersToReturn = new List<SearchViewModel>();
+            user.ForEach(a => usersToReturn.Add(new SearchViewModel(a)));
             return usersToReturn;
         }
 

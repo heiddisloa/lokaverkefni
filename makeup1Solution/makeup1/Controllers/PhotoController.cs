@@ -12,8 +12,7 @@ namespace makeup1.Controllers
 {
     public class PhotoController : Controller
     {
-        IPhotoRepository photoRepository;
-
+      /*  IPhotoRepository photoRepository;
 
         public PhotoController()
         {
@@ -24,7 +23,7 @@ namespace makeup1.Controllers
         public PhotoController(IPhotoRepository photoRepo)
         {
             photoRepository = photoRepo;
-        }
+        }*/
 
         public ActionResult MyProfile()
         {
@@ -32,10 +31,9 @@ namespace makeup1.Controllers
 
             PhotoRepository rep = new PhotoRepository();
 
-            UsersAccount model = new UsersAccount();
-            model.photos = rep.GetUsersPhotos(userId);
-            model.user = rep.GetUserByID(User.Identity.GetUserId());
-
+            UserAccountViewModel model = new UserAccountViewModel();
+            model.Photos = rep.GetUsersPhotos(userId);
+            model.User = rep.GetUserByID(User.Identity.GetUserId());
 
             return View(model);
         }
@@ -50,11 +48,11 @@ namespace makeup1.Controllers
 
             PhotoRepository rep = new PhotoRepository();
 
-            UsersAccount model = new UsersAccount();
+            UserAccountViewModel model = new UserAccountViewModel();
 
-            model.username = id;
-            model.isFollowing = userRep.IsFollowing(loggedInUser, user.UserName);
-            model.photos = rep.GetUsersPhotos(user.Id);
+            model.Username = id;
+            model.IsFollowing = userRep.IsFollowing(loggedInUser, user.UserName);
+            model.Photos = rep.GetUsersPhotos(user.Id);
 
             return View("MyProfile", model);
         }
@@ -79,10 +77,10 @@ namespace makeup1.Controllers
         }
 
         [HttpPost]
-        public ActionResult Upload(UploadModel model)
+        public ActionResult Upload(UploadViewModel model)
         {
             PhotoRepository repo = new PhotoRepository();
-            model.userid = User.Identity.GetUserId();
+            model.Userid = User.Identity.GetUserId();
             bool resp = repo.AddPhoto(model);
 
             return Json(new { success = true });//RedirectToAction("MyProfile", "Photo");

@@ -17,7 +17,7 @@ namespace makeup1.Controllers
         public JsonResult SearchForUser(string query)
         {
             UserRepository rep = new UserRepository();
-            List<UserViewModel> users = rep.Search(query);
+            List<SearchViewModel> users = rep.Search(query);
             return Json(users, JsonRequestBehavior.AllowGet);
         }
 
@@ -33,7 +33,7 @@ namespace makeup1.Controllers
                 {
                     Caption = photo.Caption,
                     ID = photo.ID,
-                    PhotoUrl = photo.photoUrl
+                    PhotoUrl = photo.PhotoUrl
                 });
             }
 

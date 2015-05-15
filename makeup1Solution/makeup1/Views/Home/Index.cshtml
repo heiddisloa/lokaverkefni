@@ -7,12 +7,12 @@
 <h2>Fréttaveita</h2>
 
 <div>
-    @foreach (var p in Model.photo)
+    @foreach (var p in Model.NewsFeedPhotos)
     {
        <div class="myProfile col-md-12">
 
          <div class="displaypic">
-            <img src="@Url.Content(p.photoUrl)" alt="IMAGES" />
+            <img src="@Url.Content(p.PhotoUrl)" alt="IMAGES" />
          </div>
         
         <div class="displaytext">

@@ -13,7 +13,7 @@ namespace makeup1.Repositories
 
         public List<Photo> GetPhotoByCategorie(string categorie)
         {
-            return db.Photos.Where(a => a.Categorie == categorie).OrderByDescending(a => a.DateCreated).ToList();
+            return db.Photos.Where(a => a.Category == categorie).OrderByDescending(a => a.DateCreated).ToList();
         }
 
         public List<Photo> GetUsersPhotos(string userId)
@@ -73,11 +73,11 @@ namespace makeup1.Repositories
             return db.Photos.Where(a => userIds.Contains(a.UserId)).OrderByDescending(a => a.DateCreated).ToList();
         }
 
-        public bool AddPhoto(UploadModel model)
+        public bool AddPhoto(UploadViewModel model)
         {
             try
             {
-                List<string> hashTags = model.hash.Split(' ').ToList();
+                List<string> hashTags = model.Hash.Split(' ').ToList();
                 List<Hashtag> tags = new List<Hashtag>();
                 foreach (var t in hashTags)
                 {
@@ -89,11 +89,11 @@ namespace makeup1.Repositories
 
                 Photo ph = new Photo()
                 {
-                    photoUrl = model.imageUrl,
-                    Caption = model.caption,
+                    PhotoUrl = model.ImageUrl,
+                    Caption = model.Caption,
                     DateCreated = DateTime.Now,
-                    UserId = model.userid,
-                    Categorie = model.categorie,
+                    UserId = model.Userid,
+                    Category = model.Category,
                     Hashtags = tags
                 };
 

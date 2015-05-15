@@ -18,26 +18,18 @@ namespace makeup1.Controllers
             string user = User.Identity.GetUserName();
 
             NewsFeedViewModel model = new NewsFeedViewModel();
-            model.photo = repo.GetFollowersPhotos(user);
+            model.NewsFeedPhotos = repo.GetFollowersPhotos(user);
             return View(model);
         }
 
         public ActionResult EditProfile()
         {
-
             return View();
         }
 
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
 
             return View();
         }

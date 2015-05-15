@@ -23,8 +23,8 @@ function ProcessUserResults(listOfUsers) {
         var currentUser = listOfUsers[i];
 
         var resultElement = $("<a />", {
-            text: currentUser.username,
-            href: "/Photo/FriendsProfile/" + currentUser.username
+            text: currentUser.UserName,
+            href: "/Photo/FriendsProfile/" + currentUser.UserName
         });
 
         $("#searchResults").append(resultElement);
@@ -106,7 +106,7 @@ $('#uploadImageBtn').on('click', function UploadImage() {
         imageUrl: $("#imageUrl").val(),
         hash: $("#imageHash").val(),
         caption: $("#imageCaption").val(),
-        categorie: $("#imageCategorie").val()
+        category: $("#imageCategory").val()
     };
     $.ajax('/Photo/Upload', {
         type: 'Post',

@@ -1,11 +1,11 @@
-﻿@model makeup1.ViewModels.UsersAccount
+﻿@model makeup1.ViewModels.UserAccountViewModel
 
 <div class="col-lg-12 follow">
-    @if (Model.username != null)
+    @if (Model.Username != null)
     {
         <div class="cfollow" >
-            <div style="display:none;" id="followUsername">@Model.username</div>
-            @if (Model.isFollowing)
+            <div style="display:none;" id="followUsername">@Model.Username</div>
+            @if (Model.IsFollowing)
             {
                 <a onclick="UnFollowUser()" class="unFollowText">Unfollow</a>
                 <a onclick="FollowUser()" class="followText" style="display:none;">Follow</a>
@@ -20,13 +20,13 @@
     else
     {
         <div>
-            <img src="@Url.Content(Model.user.ProfilePic)" alt="picture" class="profilePicture"/>
+            <img src="@Url.Content(Model.User.ProfilePic)" alt="picture" class="profilePicture"/>
         </div>
         <div class="uploadContainer">
             <input placeholder="Slóð á mynd" class="input-sm" id="imageUrl"/>
             <input placeholder="Titill" class="input-sm" id="imageCaption" />
             <input placeholder="Hashtag" class="input-sm" id="imageHash"/> 
-            <select class="input-sm" id="imageCategorie">
+            <select class="input-sm" id="imageCategory">
                 <option value="-Enginn flokkur-">-- Veldu flokk --</option>
                 <option value="Kvöldförðun">Kvöldförðun</option>
                 <option value="Dagsförðun">Dagsförðun</option>
@@ -39,10 +39,10 @@
 </div>
 
 <div>
-    @foreach (var photo in Model.photos)
+    @foreach (var photo in Model.Photos)
     {  
         <div class="minsida col-md-12">
-        <img src="@photo.photoUrl"/>
+        <img src="@photo.PhotoUrl"/>
         </div>
     }
 </div>
