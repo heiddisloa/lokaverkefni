@@ -1,0 +1,25 @@
+﻿
+@using makeup1.Models;
+@using Microsoft.AspNet.Identity;
+
+@{
+    ViewBag.Title = "EditProfile";
+}
+
+<h2>Prófíllinn þinn</h2>
+
+@using (Html.BeginForm("EditProfile","Home", FormMethod.Post, new { @class = "form-horizontal", role = "form"}))
+{
+    <div class="form-group">
+        <label for="profilepic">Url á prófíl mynd</label>
+        <input type="text" name="profilePicture" value="" id="profilePicture"/>
+    </div>
+    <div class="form-group">
+        <input class="btn btn-default" type="button" value="Cancel" onclick="@("window.location.href='" + @Url.Action("MyProfile", "Photo") + "'");" />
+        <input class="btn btn-default" type="submit" value="Submit" />
+    </div>
+
+
+    
+}
+

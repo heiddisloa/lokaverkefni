@@ -1,0 +1,48 @@
+﻿@model makeup1.ViewModels.UsersAccount
+
+<div class="col-lg-12 follow">
+    @if (Model.username != null)
+    {
+        <div class="cfollow" >
+            <div style="display:none;" id="followUsername">@Model.username</div>
+            @if (Model.isFollowing)
+            {
+                <a onclick="UnFollowUser()" class="unFollowText">Unfollow</a>
+                <a onclick="FollowUser()" class="followText" style="display:none;">Follow</a>
+            }
+            else
+            {
+                <a onclick="FollowUser()" class="followText">Follow</a>
+                <a onclick="UnFollowUser()" class="unFollowText" style="display:none;">Unfollow</a>
+            }
+        </div>
+    }
+    else
+    {
+        <div>
+            <img src="@Url.Content(Model.user.ProfilePic)" alt="picture" class="profilePicture"/>
+        </div>
+        <div class="uploadContainer">
+            <input placeholder="Slóð á mynd" class="input-sm" id="imageUrl"/>
+            <input placeholder="Titill" class="input-sm" id="imageCaption" />
+            <input placeholder="Hashtag" class="input-sm" id="imageHash"/> 
+            <select class="input-sm" id="imageCategorie">
+                <option value="-Enginn flokkur-">-- Veldu flokk --</option>
+                <option value="Kvöldförðun">Kvöldförðun</option>
+                <option value="Dagsförðun">Dagsförðun</option>
+                <option value="Snyrtivörur">Snyrtivörur</option>
+                <option value="Förðun eftir mig">Förðun eftir mig</option>
+            </select>
+            <input class="btn btn-default" type="submit" value="Bæta við mynd" id="uploadImageBtn" />
+        </div>        
+    }
+</div>
+
+<div>
+    @foreach (var photo in Model.photos)
+    {  
+        <div class="minsida col-md-12">
+        <img src="@photo.photoUrl"/>
+        </div>
+    }
+</div>

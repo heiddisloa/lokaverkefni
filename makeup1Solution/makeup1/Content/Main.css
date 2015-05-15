@@ -1,0 +1,274 @@
+﻿body {
+}
+.logo a
+{
+    display: block;
+    margin: auto;
+    width: 300px;        
+
+}
+
+#logo
+{
+    height: 300px;
+    width: 300px;
+}
+
+h1
+{
+    color: darkgrey;
+}
+
+.search-box 
+{
+    margin-top: 8px;
+    width: 200px;
+}
+
+.photo-wrapper 
+{
+    display:block;  
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: 50% 50%; 
+    max-width: 100%; 
+    height: 400px;
+}
+
+IMG.displayed 
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.textiimidju
+{
+    margin-left:100px;
+    margin-right:100px; 
+    padding-left:100px;
+    padding-right:100px; 
+}
+
+.artist
+{
+    width: 50%;
+    margin: 20px auto;
+    
+}
+
+.artist .image
+{
+    width: 50%;
+    float: left;
+    display: inline-block;
+    height: 250px;
+    overflow:hidden;
+}
+
+.artist .info
+{
+   display: inline-block;
+   height:250px;
+   padding: 20px;
+   width: 50%;
+
+}
+
+.artist .image img
+{
+    max-width: 100%;
+}
+
+h2
+{
+    text-align: center; 
+}
+
+@media (max-width:750px)
+{
+
+.artist
+{
+    width: 100%;
+    
+}
+} 
+
+.login{
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+
+#loginForm{
+    margin: auto;
+    width: 50%;
+}
+
+.imgsize
+{
+     height: 300px;
+     width: 750px;
+}
+
+.imgsize2
+{
+    height: 50px; 
+    width: 100px; 
+}
+
+#col-md-4.text {
+position:relative;
+bottom:30px;
+left:0px;
+visibility:hidden;
+}
+
+#col-md-4:hover .text {
+visibility:visible;
+}
+
+
+.minsida 
+{
+    width: 100%;
+    display: block;
+    height: auto;
+    margin-left: 10%;
+}
+.minsida > img
+{
+    float:left;
+    width: 300px;
+    height: 300px;
+    margin: 5px 5px;
+}
+.foot
+{
+    display: block;
+    width: 100%;
+}
+#camera {
+    border: none;
+    padding: 0px;
+    margin-top: 20px;
+}
+
+.profile-about
+{
+    width: 100%;
+    margin: 30px; 
+}
+
+.about-me
+{
+    width: 100%;
+    display: block;
+
+}
+
+.button-col
+{
+    background-color: grey; 
+}
+
+.textCaption
+{
+    font-size: x-large;
+    font-style: oblique;
+    margin-bottom: 0px;
+}
+
+.propic
+{
+    margin: auto; 
+    display: block; 
+    padding: auto; 
+
+}
+
+.ig
+{
+    width: 50px; 
+    height: 50 px;
+}
+
+.follow 
+{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.followText
+{
+    cursor: pointer;
+    padding: 5px;
+    font-size: 25px;
+    color: black;
+    text-decoration: none;
+}
+
+.unFollowText {
+    cursor: pointer;
+    padding: 5px;
+    font-size: 25px;
+    color: red;
+    text-decoration: none;
+}
+
+.followText:hover
+{
+    text-decoration: none;
+    color: black;
+}
+
+.unFollowText:hover
+{
+    text-decoration: none;
+    color: black;
+}
+
+.myProfile 
+{
+    width: 50%;
+    margin: auto;
+}
+
+.profilePicture
+{
+    width: 100%;
+    max-height: 250px;
+    max-width: 300px;
+    min-height: 100px;
+    min-width: 100px;
+}
+
+.categoryImg > img
+{
+    width: 300px;
+    height: 300px;
+}
+
+.categories
+{
+  cursor: pointer;
+  padding: 15px;
+  font-size: 25px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.categories:hover
+{
+   text-decoration: none;
+   text-decoration-color: black;
+}
+
+h2
+{
+  padding: 15px;
+  font-size: 40px;
+  color: black;
+}

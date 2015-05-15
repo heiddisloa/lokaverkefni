@@ -1,0 +1,30 @@
+﻿@model makeup1.ViewModels.NewsFeedViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Fréttaveita</h2>
+
+<div>
+    @foreach (var p in Model.photo)
+    {
+       <div class="myProfile col-md-12">
+
+         <div class="displaypic">
+            <img src="@Url.Content(p.photoUrl)" alt="IMAGES" />
+         </div>
+        
+        <div class="displaytext">
+            <p class="textCaption">@p.Caption</p>
+            @foreach(var h in p.Hashtags)
+            {
+                <span>#@h.HastagName</span>               
+            }          
+        </div>
+       </div>
+       <br />
+       <br />
+    }
+
+</div>
