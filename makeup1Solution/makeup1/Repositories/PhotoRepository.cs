@@ -7,7 +7,7 @@ using makeup1.ViewModels;
 
 namespace makeup1.Repositories
 {
-    public class PhotoRepository : IPhotoRepository
+    public class PhotoRepository
     {
         ApplicationDbContext db = new ApplicationDbContext();
 

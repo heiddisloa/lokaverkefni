@@ -12,18 +12,6 @@ namespace makeup1.Controllers
 {
     public class PhotoController : Controller
     {
-      /*  IPhotoRepository photoRepository;
-
-        public PhotoController()
-        {
-            photoRepository = new PhotoRepository();
-        }
-
-        // Test constructor, takes a repository as argument.
-        public PhotoController(IPhotoRepository photoRepo)
-        {
-            photoRepository = photoRepo;
-        }*/
 
         public ActionResult MyProfile()
         {
@@ -83,7 +71,7 @@ namespace makeup1.Controllers
             model.Userid = User.Identity.GetUserId();
             bool resp = repo.AddPhoto(model);
 
-            return Json(new { success = true });//RedirectToAction("MyProfile", "Photo");
+            return Json(new { success = true });
         }
 	}
 }
